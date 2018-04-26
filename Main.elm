@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Html exposing (Html, div, button, text, program)
 import Html.Events exposing (onClick)
+import Model exposing (Model)
 
 main =
     program
@@ -10,15 +11,6 @@ main =
         , update = update
         , subscriptions = subscriptions
         }
-
-type alias Form =
-    { password: String
-    , passwordRe: String
-    }
-type alias Model =
-    { isOpen: Bool
-    , form: Form
-    }
 
 type Msg = Open | Close
 
