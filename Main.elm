@@ -1,8 +1,11 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, button, text, program)
-import Html.Events exposing (onClick)
+import Html exposing (program)
+
 import Model exposing (Model)
+import Update exposing (update, Msg)
+import Subscriptions exposing (subscriptions)
+import View exposing (view)
 
 main =
     program
@@ -12,7 +15,6 @@ main =
         , subscriptions = subscriptions
         }
 
-type Msg = Open | Close
 
 init: (Model, Cmd Msg)
 init =
@@ -23,15 +25,6 @@ init =
         }
     }, Cmd.none)
 
-update: Msg -> Model -> (Model, Cmd Msg)
-update _ model =
-    (model, Cmd.none)
 
 
-subscriptions: Model -> Sub Msg
-subscriptions  model =
-    Sub.none
 
-view: model -> Html Msg
-view _ =
-    div [][text "dupa"]
